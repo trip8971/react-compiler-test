@@ -9,8 +9,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/table";
-import Link from "next/link";
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { addCountry, deleteCountry, getCountries } from "@/helpers/resources";
 import { Input } from "@/components/input";
@@ -76,7 +76,8 @@ export const CountriesBroken = () => {
           {countries?.map(({ name }, index) => (
             <TableRow key={`${name.toLowerCase()}`}>
               <TableCell className="font-medium">
-                <Link href={`/countriy/${name.toLowerCase()}`}>{name}</Link>
+                {/* Using a placeholder link for now, actual route might differ */}
+                <Link to={`/country/${name.toLowerCase()}`}>{name}</Link>
               </TableCell>
               <TableCell className="text-right">
                 <Button onClick={() => onDelete(name)} variant="outline">

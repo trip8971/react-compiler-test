@@ -1,32 +1,14 @@
-import { CountriesBroken } from "@/components/countries-broken";
-import Link from "next/link";
+import React from 'react';
 
-export default async function Page() {
+export default function Page() {
   return (
-    <div
-      className="min-h-screen py-8 gap-16 max-w-[80rem] mx-auto"
-      style={{ fontFamily: "var(--font-geist-sans)" }}
-    >
+    <div>
       <h1 className="text-3xl my-10">
-        Code examples to test out the React Compiler
+        Welcome!
       </h1>
-      <ul>
-        <li>
-          <Link href="/simple-cases" className="hover:underline">
-            Go to: Simple examples (will be very slow on initial load)
-          </Link>
-        </li>
-        <li>
-          <Link href="/countries-broken" className="hover:underline">
-            Go to: Countries app, broken
-          </Link>
-        </li>
-        <li>
-          <Link href="/countries-fixed" className="hover:underline">
-            Go to: Countries app, fixed
-          </Link>
-        </li>
-      </ul>
+      <p className="text-lg">
+        Use the navigation links above to explore the different examples.
+      </p>
     </div>
   );
 }
